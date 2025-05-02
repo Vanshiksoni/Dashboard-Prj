@@ -79,89 +79,60 @@
         </LinearLayout>
 
         <!-- Tasks -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Today's Tasks"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingTop="24dp"
-            android:paddingBottom="8dp" />
-
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Today's Tasks"-->
+<!--            android:textSize="18sp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:paddingTop="24dp"-->
+<!--            android:paddingBottom="8dp" />-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp">
 
-            <!-- Doctor Appointment -->
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Today's Tasks"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:scaleType="fitCenter"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/doctor_img" />
-
-                <TextView
-                    android:text="Doctor Appointment Today"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp" />
-            </LinearLayout>
-
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="32dp"-->
-<!--                android:text="• Doctor's Appointment - 10:00 AM" />-->
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="34dp"-->
-<!--                android:text="• Take Medication" />-->
-
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/medicines_img" />
-
-                <TextView
-                    android:text="Take Medication"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp" />
-            </LinearLayout>
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:src="@drawable/yoga_icon" />
-
-                <TextView
-                    android:text="Yoga Session - 2:00 PM"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp" />
-            </LinearLayout>
-
-<!--            <TextView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="32dp"-->
-<!--                android:text="• Yoga Session - 2:00 PM" />-->
+            <ImageButton
+                android:id="@+id/btnViewAllTasks"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:padding="4dp"
+                android:src="@drawable/add_task_icon"
+                android:contentDescription="View All Tasks" />
         </LinearLayout>
+
+        <!-- Preview Task List -->
+        <ListView
+            android:id="@+id/taskPreviewList"
+            android:layout_width="match_parent"
+            android:layout_height="168dp"
+            android:layout_marginBottom="8dp"
+            android:dividerHeight="1dp"
+            android:nestedScrollingEnabled="true"
+            android:scrollbars="vertical" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btnViewAllTasks"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="View Full Task List"-->
+<!--            android:layout_gravity="end"-->
+<!--            android:layout_marginTop="8dp"-->
+<!--            android:layout_marginBottom="16dp" />-->
+
+
 
         <!-- Button Grid -->
 
@@ -183,7 +154,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="100dp"
+                    android:layout_width="150dp"
                     android:layout_height="100dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/yoga_img" />
@@ -282,7 +253,7 @@
                     android:background="@null"
                     android:contentDescription="Home"
                     android:scaleType="fitCenter"
-                    android:src="@drawable/home_img" />
+                    android:src="@drawable/cliplinehouse" />
 
                 <TextView
                     android:layout_width="wrap_content"
